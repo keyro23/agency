@@ -1,0 +1,760 @@
+{% load static %}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Keyro Connect</title>
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+</head>
+
+<style>
+{% block style %}{% endblock style %}
+</style>
+<body>
+
+
+     {% block content %}
+        
+        <body>
+
+          <!DOCTYPE html>
+          <html lang="en">
+          
+          <head>
+            <meta charset="utf-8">
+            <meta content="width=device-width, initial-scale=1.0" name="viewport">
+          
+            <title>Delicious Bootstrap Template - Index</title>
+            <meta content="" name="description">
+            <meta content="" name="keywords">
+          
+            <!-- Favicons -->
+            <link href="assets/img/favicon.png" rel="icon">
+            <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+          
+            <!-- Google Fonts -->
+            <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i" rel="stylesheet">
+          
+            <!-- Vendor CSS Files -->
+            <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+            <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+            <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+            <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+            <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+            <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+          
+            <!-- Template Main CSS File -->
+            <link href="assets/css/style.css" rel="stylesheet">
+          
+            <!-- =======================================================
+            * Template Name: Delicious
+            * Updated: Mar 10 2023 with Bootstrap v5.2.3
+            * Template URL: https://bootstrapmade.com/delicious-free-restaurant-bootstrap-theme/
+            * Author: BootstrapMade.com
+            * License: https://bootstrapmade.com/license/
+            ======================================================== -->
+          </head>
+          
+          <body>
+          
+            <!-- ======= Top Bar ======= -->
+          <!---  <section id="topbar" class="d-flex align-items-center fixed-top topbar-transparent">
+              <div class="container-fluid container-xl d-flex align-items-center justify-content-center justify-content-lg-start">
+                <i class="bi bi-phone d-flex align-items-center"><span>+254 74840 3481</span></i>
+                <i class="bi bi-clock ms-4 d-none d-lg-flex align-items-center"><span>Mon-Sat: 7:00 AM - 21:00 PM</span></i>
+              </div> -->
+            </section>
+          
+            <!-- ======= Header ======= -->
+            <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+              <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+          
+                
+
+
+                <div class="logo me-auto">
+                  <a href="{% url 'home'%}"><img src="static/img/logo.png" alt="" width="70" length="320"class="img-fluid"> </a>
+                  <!--Uncomment below if you prefer to use an image logo -->
+                 <!-- <div style="text-align: left;"> <img src="{% static "img/amos.png" %}"width="100" height="150" alt="loading..." /></a></div> -->
+                   
+                </div>
+          
+                <nav id="navbar" class="navbar order-last order-lg-0">
+                  <ul>
+                    <li><a class="nav-link scrollto active" href="{% url 'home'%}">Home</a></li>
+                {% if user.is_superuser%}
+                    <li class="nav-item" role="presentation">
+                      <a class="nav-link active" href="{% url 'manage' %}">Manage</a>
+                 {% endif %}
+                  </li>
+                    
+                    <li><a class="nav-link scrollto" href="#services">Services</a></li>
+                    <li><a class="nav-link scrollto" href="#process">The Process</a></li>
+                    <li><a class="nav-link scrollto" href="#team">Our Team</a></li>
+                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+
+                <a href="{% url "appointment" %}" class="book-a-table-btn scrollto"><strong>BOOK APPOINTMENT</strong></a>
+          
+              </div>
+            </header><!-- End Header -->
+          
+            <!-- ======= Hero Section ======= -->
+            <section id="hero">
+              <div class="hero-container">
+                <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+          
+                  <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+          
+                  <div class="carousel-inner" role="listbox">
+          
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active" style="background-image: url(static/img/slide/bg2.webp);">
+                      <div class="carousel-container">
+                        <div class="carousel-content">
+                          <h2 class="animate__animated animate__fadeInDown">Welcome To</h2>
+                          <h2 class="animate__animated animate__fadeInDown"><span>Keyro</span> Connect</h2>
+                          <p class="animate__animated animate__fadeInUp"><h4><font color="red"> <strong>Are you passsionate on growing your business and making the economy work for you?</h4> </font></strong> <br> <h5><font color="white"> <strong>We build, connect, Expose, Model, Mentor, Grow </h5> </strong> </font></p>
+                          <div>
+                            <a href="#services" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Services</a>
+                            <a href="{% url "appointment" %}" class="btn-book animate__animated animate__fadeInUp scrollto">Book Appointment</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+          
+                    <!-- Slide 2 -->
+                    <div class="carousel-item" style="background-image: url(static/img/slide/slide-2.jpg);">
+                      <div class="carousel-container">
+                        <div class="carousel-content">
+                          <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
+                          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                          <div>
+                            <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
+                            <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+          
+                    <!-- Slide 3 -->
+                    <div class="carousel-item" style="background-image: url(static/img/slide/slide-3.jpg);">
+                      <div class="carousel-container">
+                        <div class="carousel-content">
+                          <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
+                          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                          <div>
+                            <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
+                            <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+          
+                  </div>
+          
+                  <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+                  </a>
+          
+                  <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+                  </a>
+          
+                </div>
+              </div>
+            </section><!-- End Hero -->
+
+
+
+            <div class="header" style="
+              background: rgb(12, 12, 12) url('../static/img/heade.png') no-repeat fixed center
+              {% if "appointment" in request.path %}
+              max-height:300px!important;min-height:300px!important;
+              {% endif %}
+              ">
+          
+            <main id="main">
+          
+              <!-- ======= About Section ======= -->
+              <section id="about" class="about">
+                <div class="container-fluid">
+          
+                  <div class="row">
+          
+                    <div class="col-lg-5 align-items-stretch video-box" style='background-image: url("static/img/about.jpg");'>
+                      <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+                    </div>
+          
+                    <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
+          
+                      <div class="content">
+                        <h3>Excellence is the nature of KEYRO CONNECT. Our services propel the clients aims and desires</strong></h3>
+                        <p>
+                          Marketing is the backbone of success in every business and brand. Strategies that we deliver to our clients are always a guarantee of hiking the business revenue.
+                        </p>
+                        <p class="fst-italic">
+                          KEYRO CONNECT is a platform that promises expansion and impacts clients that connect to us. This platfrorm was founded by <strong>Amos Ekirapa</strong>.  He is visualizing this platform to be a centre of businesses and brands growth,expansion and connecting. 
+                        </p>
+                        <ul>
+                          <li><i class="bx bx-check-double"></i> Watch the Video aside to know more about KEYRO CONNECT.</li>
+                        
+                        </ul>
+                        <p>
+                          
+                        </p>
+                      </div>
+          
+                    </div>
+          
+                  </div>
+          
+                </div>
+              </section><!-- End About Section -->
+          
+              <!-- ======= Whu Us Section ======= -->
+
+                <section id="services" class="why-us">
+                  <div class="container">
+            
+                    <div class="section-title">
+                      <h2><font color="white"><strong>OUR SERVICES</strong></font></h2>
+                      <p><font color="white">We guarantee excellence in our services.</font></p>
+                    </div>
+            
+                    <div class="row">
+            
+                      <div class="col-lg-4">
+                        <div class="box">
+                          <span></span>
+                          <h4>Social Media Management</h4>
+                          <p>Our Social mediamarketing expertise will help you build your brand's online presence as well as generate sales faster than you may think. There's great power in social media to create authentic fans and brand ambassodors who spread your awesomesness.</p>
+                        </div>
+                      </div>
+            
+                      <div class="col-lg-4 mt-4 mt-lg-0">
+                        <div class="box">
+                          <span></span>
+                          <h4>Graphic Design & Web Development</h4>
+                          <p>We help your brand stand out from your competition through creative & topnotch graphic design services. <br> We offer clean, high quality and creative designs with your company's image in mind.  Whether you are interested in creative logos, marketing brochures, newsletters, direct mail pieces, trade show displays or point-of-purchase designs, our professional and skilled graphic designers are here to create your vision or the vision you didn't know you wanted until you saw it.</p>
+                        </div>
+                      </div>
+            
+
+                      <div class="col-lg-4 mt-4 mt-lg-0">
+                        <div class="box">
+                          <span></span>
+                          <h4>Product Photography</h4>
+                          <p>Our product photography packages is designed to help your business showcase your products in the best possible light. We will work with youto create stunning images that highlight the unique features and beefits of your products, capturing the attention of your target audeince and driving sales. <br>
+                        <strong>Package includes </strong> <br>
+                      * Consultation <br>
+                    *Styling & Props <br>
+                  *Photography <br>
+                *Editing <br>
+              *Delivery </p>
+                        </div>
+                      </div>
+
+
+                      <div class="col-lg-4 mt-4 mt-lg-0">
+                        <div class="box">
+                          <span></span>
+                          <h4>Social Media Lead Genration</h4>
+                          <p>We use our expertise andexperience to create and execute winning leads generation and campaigns that will keep you generating quality leads that can easily be converted to sales all year round...</p>
+                        </div>
+                      </div>
+
+
+
+                      <div class="col-lg-4 mt-4 mt-lg-0">
+                        <div class="box">
+                          <span></span>
+                          <h4>Email Marketing & Bulk SMS package</h4>
+                          <p>Our Email Marketing & Bulk SMS package is designed to help your business reach and engage with your target audience through effective email and text campains. We'll work with you to create campaigns that are tailored to your specific business needs, helping your increase engagement, drive sales and building brand awareness. <br>
+                          <strong> Package Includes </strong>
+                        *Campaign Strategy <br>
+                      *Campaign Execution<br>
+                    *Reporting & analysis</p>
+                        </div>
+                      </div>
+
+
+
+                      <div class="col-lg-4 mt-4 mt-lg-0">
+                        <div class="box">
+                          <span></span>
+                          <h4> Branding Solutions</h4>
+                          <p><strong> Are you a self msde brand or organizational brand? </strong> <br>
+                          We have all solutions you need to your questions of ; building your reputatuion, engaging audience, reaching your target market, Building your income etc<br>
+                        We have different Strategiesin place to help you archieve your aim, this includes <strong> Tik Tok marketing </strong> <br>
+                      Tik Tok is a popular social media platform that caters to a younger demographic and has a unique and entertaining content style. <br>
+                    </p>
+                        </div>
+                      </div>
+            
+                    </div>
+            
+                  </div>
+                </section><!-- End Whu Us Section -->
+            
+                
+
+
+
+
+
+
+         
+              </section><!-- End Specials Section -->
+          
+              <!-- ======= Events Section ======= -->
+              <section id="process" class="events">
+                <div class="container">
+          
+                  <div class="section-title">
+                    <h2><strong>The Process </strong></h2> <br>
+                    <h4><font color="white"> Your Project is now in excellent hands. Here is how we take you through the journey. Hop in and take a peek into this exciting process with our team. </font> </h4>
+                  </div>
+          
+                  <div class="events-slider swiper">
+                    <div class="swiper-wrapper">
+          
+                      <div class="swiper-slide">
+                        <div class="row event-item">
+                          <div class="col-lg-6">
+                            <img src="static/img/initial.jpg" class="img-fluid" alt="">
+                          </div>
+                          <div class="col-lg-6 pt-4 pt-lg-0 content">
+                            <h3>Step 1. Initial Contact</h3>
+                            <div class="price">
+                              <p><span>Knowing Our clients and picking their needs</span></p>
+                            </div>
+                            <p class="fst-italic">
+                              When a client drops us a line, we spring into action! We take the time to get to know them, pick up their 
+                              needs and preferences, and then schedule a second meeting. Whether it's virtual or in-person, we're ready to keep the conversation going and get down to business. <br>
+                              Let's DO This!
+                            </p>
+                          
+                          </div>
+                        </div>
+                      </div><!-- End testimonial item -->
+          <hr>
+                      <div class="swiper-slide">
+                        <div class="row event-item">
+                          <div class="col-lg-6">
+                            <img src="static/img/meet.webp" class="img-fluid" alt="">
+                          </div>
+                          <div class="col-lg-6 pt-4 pt-lg-0 content">
+                            <h3> Step 2. Initialmeeting</h3>
+                            <div class="price">
+                              <p><span>Experience our listening skiils</span></p>
+                            </div>
+                            <p class="fst-italic">
+                              AT our place, we're all ears when it comes to our prospective clients! We love to sit down, listen, and really get to know their business model inside and out. By identifying their unique needs, we can tailor our approach to create a customized solution that works just for them. <br>
+                              Let's dive in and get to know each other!
+                            </p>
+                           
+                          </div>
+                        </div>
+                      </div><!-- End testimonial item -->
+          
+                      <hr>
+                      <div class="swiper-slide">
+                        <div class="row event-item">
+                          <div class="col-lg-6">
+                            <img src="static/img/brain.jpg" class="img-fluid" alt="">
+                          </div>
+                          <div class="col-lg-6 pt-4 pt-lg-0 content">
+                            <h3>Step 3. Team Brainstorm</h3>
+                            <div class="price">
+                              <p><span>Feel the engagement of our team</span></p>
+                            </div>
+                            <p class="fst-italic">
+                            The Keyro Connect team then holds a brainstorming session to discuss the ideal solutions for the clients and come up with an ideal budget for the project.
+                            </p>
+                            <ul>
+                              <li><i class="bi bi-check-circle"></i> Let KEYRO CONNECT solve your problems by sorting you with experienced personells in different fileds.</li>
+                             
+                            </ul>
+                          
+                          </div>
+                        </div>
+                      </div><!-- End testimonial item -->
+
+
+
+
+                      <hr>
+                      <div class="swiper-slide">
+                        <div class="row event-item">
+                          <div class="col-lg-6">
+                            <img src="static/img/quatation.jpg" class="img-fluid" alt="">
+                          </div>
+                          <div class="col-lg-6 pt-4 pt-lg-0 content">
+                            <h3>Step 4. Quotation</h3>
+                            <div class="price">
+                              <p><span>Down to business!</span></p>
+                            </div>
+                            <p class="fst-italic">
+                            Are you ready to get down to business? We've got pricing options that'll knock your socks off! We can create a customized quotation that's tailor-made just for you, or if you prefer, we'll share our handy dandy rate card. Whatever your preference, we're all about keeping things transparent and straightfoward. So let's crunch some numbers and find the perfect solution for you! <br>
+                            <strong> Let's make some magic Happen! </strong>
+                            </p>
+                            <ul>
+                              <li><i class="bi bi-check-circle"></i> </li>
+                             
+                            </ul>
+                          
+                          </div>
+                        </div>
+                      </div><!-- End testimonial item -->
+
+
+
+
+
+                      <hr>
+                      <div class="swiper-slide">
+                        <div class="row event-item">
+                          <div class="col-lg-6">
+                            <img src="static/img/contract.jpg" class="img-fluid" alt="">
+                          </div>
+                          <div class="col-lg-6 pt-4 pt-lg-0 content">
+                            <h3>Step 5. Contract/Agreement</h3>
+                            <div class="price">
+                              <p><span>Let's Agree</span></p>
+                            </div>
+                            <p class="fst-italic">
+                            Once we've discussed the details of the project and agreed on the scope of work, we'll put together a customized service agreement. This agreement outlines all the terms and conditions of our partnership and is shared with the prospective client for review. If everything lokoks good  and the client agrees to the terms, we'll move foward and sign the contract, allowing the project to commence. We take our commitments seriously and believe in creating a solid foundation of trust and transparency with our clients.
+                            </p>
+                           
+                          
+                          </div>
+                        </div>
+                      </div><!-- End testimonial item -->
+
+
+
+
+
+
+
+                      <hr>
+                      <div class="swiper-slide">
+                        <div class="row event-item">
+                          <div class="col-lg-6">
+                            <img src="static/img/invoicing.jpg" class="img-fluid" alt="">
+                          </div>
+                          <div class="col-lg-6 pt-4 pt-lg-0 content">
+                            <h3>Step 6. Invoicing</h3>
+                            <div class="price">
+                              <p><span>Required!</span></p>
+                            </div>
+                            <p class="fst-italic">
+                            After the client has agreed to move foward with the project and signed the service agreement, we'll proceed to invoiving.
+                            We require a one-month upfront to be paid before we begin the work. This allows us to allocate the necessary resources and start the project off on the right foot. Our payment process is straightfoward 
+                            and designed to provide peace of mind to our clients, knowing that their project is in good hands.
+                            </p>
+                         
+                          </div>
+                        </div>
+                      </div><!-- End testimonial item -->
+
+
+
+
+
+                      <hr>
+                      <div class="swiper-slide">
+                        <div class="row event-item">
+                          <div class="col-lg-6">
+                            <img src="static/img/media.webp" class="img-fluid" alt="">
+                          </div>
+                          <div class="col-lg-6 pt-4 pt-lg-0 content">
+                            <h3>Step 7. Social Media Strategy & Content Calender</h3>
+                            <div class="price">
+                              <p><span>Designing A social media strategy</span></p>
+                            </div>
+                            <p class="fst-italic">
+                           At this stage, our team puts their heads together to craft the perfect social media strategy of our clients. We'll create a one month content calender that's specifically tailored to their unique goals and objectives. Before we get started, we'll share the calender with the client for any necessary changes or approval. Our team takes pride in providing top-notch service and producing high-quality work, so we're always happy to collaborate with oru clients to ensure their satisfaction.
+                            </p>
+                           
+                          </div>
+                        </div>
+                      </div><!-- End testimonial item -->
+
+
+
+
+
+                      <hr>
+                      <div class="swiper-slide">
+                        <div class="row event-item">
+                          <div class="col-lg-6">
+                            <img src="static/img/content.jpg" class="img-fluid" alt="">
+                          </div>
+                          <div class="col-lg-6 pt-4 pt-lg-0 content">
+                            <h3>Step 8. Content Creation and Service Begins</h3>
+                            <div class="price">
+                              <p><span>We Dive to Implementation</span></p>
+                            </div>
+                            <p class="fst-italic">
+                           After the social media startegy and content calender have been finalized and approved by the client, the relevant creative teams take the lead. Our talented team of content creators produces high-quality
+                           content that aligns with the agreed-upon strategy. Once the content is created, it's passed over to the client for approval before being handed off to our dedicated social media managers.
+                           They take charge of posting the content across various social media platformsnon a daily basis. Our teams work together seamlessly to ensure that the client's vision is brought to life and their goals are archieved.
+                            </p>
+                            <ul>
+                              <li><i class="bi bi-check-circle"></i> Let KEYRO CONNECT solve your problems by sorting you with experienced personells in different fileds.</li>
+                             
+                            </ul>
+                          
+                          </div>
+                        </div>
+                      </div><!-- End testimonial item -->
+
+
+
+
+
+
+
+
+
+
+
+          
+                    </div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+          
+                </div>
+              </section><!-- End Events Section -->
+
+
+          <hr>
+
+
+              <div class="header" style="
+              background: rgb(12, 12, 12) url('../static/img/heade.png') no-repeat fixed center
+              {% if "appointment" in request.path %}
+              max-height:300px!important;min-height:300px!important;
+              {% endif %}
+              ">
+
+
+
+
+              <!-- ======= Chefs Section ======= -->
+              <section id="team" class="chefs">
+                <div class="container">
+          
+                  <div class="section-title">
+                    <h2>Our Team <span></span></h2>
+                    <p></p>
+                  </div>
+          
+                  <div class="row">
+          
+                    <div class="col-lg-4 col-md-6">
+                      <div class="member">
+                        <div class="pic"><img src="static/img/team/team4.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                          <h4>Amos Orupia</h4>
+                          <span>Ceo & Founder</span>
+                        </div>
+                      </div>
+                    </div>
+          
+                    <div class="col-lg-4 col-md-6">
+                      <div class="member">
+                        <div class="pic"><img src="static/img/team/team3.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                          <h4>Nancy Ritah</h4>
+                          <span>Social Meedia strategist & Marketing Expert</span>
+                        
+                        </div>
+                      </div>
+                    </div>
+          
+
+                    <div class="col-lg-4 col-md-6">
+                      <div class="member">
+                        <div class="pic"><img src="static/img/team/team2.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                          <h4>Joel Paul</h4>
+                          <span>Graphic Designer & Media Specialist</span>
+                        
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                      <div class="member">
+                        <div class="pic"><img src="static/img/team/team1.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                          <h4>Samson Mutiriah</h4>
+                          <span>Content Creator/Marketing Executive</span>
+                        
+                        </div>
+                      </div>
+                    </div>
+<!---
+                    <div class="col-lg-4 col-md-6">
+                      <div class="member">
+                        <div class="pic"><img src="static/img/chefs/chefs-2.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                          <h4>Sarah Jhonson</h4>
+                          <span>Senior Marketor</span>
+                        
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="col-lg-4 col-md-6">
+                      <div class="member">
+                        <div class="pic"><img src="static/img/chefs/chefs-3.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                          <h4>William Anderson</h4>
+                          <span>Head Of Branding Solutions</span>
+                         
+                        </div>
+                      </div>
+                    </div>
+                  -->
+                  </div>
+          
+                </div>
+              </section><!-- End Chefs Section -->
+
+                  
+          
+                </div>
+              </section><!-- End Testimonials Section -->
+          
+              <!-- ======= Contact Section ======= -->
+             
+            </main><!-- End #main -->
+          
+        
+            <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+          
+            <!-- Vendor JS Files -->
+            <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+            <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+            <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+            <script src="assets/vendor/php-email-form/validate.js"></script>
+          
+            <!-- Template Main JS File -->
+            <script src="assets/js/main.js"></script>
+          
+          
+          
+          </html>
+
+
+
+   {% block cta %}{% endblock cta %}
+
+
+
+{% endblock content %}
+
+  <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+  
+ <script>
+    {% block script %}{% endblock script %}
+ </script>
+</body>
+
+<hr>
+
+</html>
+<section id="contact" class="contact">
+   <div class="row">
+    
+      
+          <div class="col-sm-6">
+            <div class="contact-map">
+              <iframe src="https://www.google.com/maps/dir/-1.05312,37.0939842/Ananas+Mall+Thika+google+map/@-1.0538952,37.0951508,15z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x182f4e32166a3187:0x78e76b97a045af38!2m2!1d37.1139475!2d-1.0557004?entry=ttu" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="width: 100%; height: 360px;"></iframe>
+            </div>
+          </div><!-- end col -->
+  
+          <!-- Contact form -->
+          
+          <div class="col-sm-6">
+            <form role="form" name="ajax-form" id="ajax-form" method="post" class="form-main" action="{% url 'home' %}">
+            {% csrf_token %}
+              <div class="form-group">
+                <label for="name2"><font color="red"> Name </font></label>
+                <input class="form-control" id="name2" name="name" type="text" placeholder="name">
+                <div class="error" id="err-name" style="display: none;">Please enter name </font><font></div>
+              </div> <!-- /Form-name -->
+  
+              <div class="form-group">
+                <label for="email2"><font color="red">Email</font></label>
+                <input class="form-control" id="email2" name="email" type="text" placeholder="email">
+                <div class="error" id="err-emailvld" style="display: none;">E-mail is not a valid format</div> 
+              </div> <!-- /Form-email -->
+  
+              <div class="form-group">
+                <label for="message2"><font color="red">Message</font></label>
+                <textarea class="form-control" id="message2" name="message" rows="5" placeholder="message">Message</textarea>
+  
+                <div class="error" id="err-message" style="display: none;">Please enter message</div>
+              </div> <!-- /col -->
+  
+              <div class="row">            
+                  <button type="submit" class="btn btn-primary btn-shadow btn-rounded w-md" id="send">Send</button>
+                </div> <!-- /col -->
+              </div> <!-- /row -->
+  
+            </form> <!-- /form -->
+          </div> <!-- end col -->
+  
+        </div> <!-- end row -->
+      </div>
+      </div>
+</section>
+</body>
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="container">
+        <h3>Excellence</h3>
+        <p>Believe in us and let us deliver our excellent work of impression and hike to your business.</p>
+        <div class="social-links">
+          <a href="https://twitter.com/OrupiaAmos?s=09" class="twitter"><i class="bx bxl-twitter"></i><img src="static/img/t.png" class="img-fluid" alt=""></a>
+          <a href="https://www.facebook.com/keyroagency1?mibextid=ZbWKwL" class="facebook"><i class="bx bxl-facebook"><img src="static/img/fb.png" class="img-fluid" alt=""></i></a>
+          <a href="https://instagram.com/keyroekirapa?igshid=MzNlNGNkZWQ4Mg==" class="instagram"><i class="bx bxl-instagram"></i><img src="static/img/ig.png" class="img-fluid" alt=""></a>
+          <a href="https://www.linkedin.com/in/amos-ekirapa" class="linkedin"><i class="bx bxl-linkedin"></i><img src="static/img/in.png" class="img-fluid" alt=""></a>
+          <a href="https://tiktok.com/@keyroamos" class="TikTok"><i class="bx bxl-linkedin"></i><img src="static/img/tt.jpeg" class="img-fluid" alt=""></a>
+          <a href="https://wa.me/+254748403481" class="Whatsapp"><i class="bx bxl-linkedin"></i><img src="static/img/ws.png" class="img-fluid" alt=""></a>
+        </div>
+         
+        <div class="copyright">
+          &copy; Copyright <strong><span>keyroconnect</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/delicious-free-restaurant-bootstrap-theme/ -->
+          Designed by <a href="https://bootstrapmade.com/">keyroconnect</a>
+        </div>
+      </div>
+    </footer><!-- End Footer -->
+  
